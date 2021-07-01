@@ -471,6 +471,7 @@ NSNotificationName const ALTDeviceManagerDeviceDidDisconnectNotification = @"ALT
     }
     
     NSData *data = [fileHandle readDataToEndOfFile];
+    [fileHandle closeFile];
 
     uint64_t af = 0;
     
