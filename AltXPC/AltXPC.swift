@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CAltSign
 
 @objc(AltXPC)
 class AltXPC: NSObject, AltXPCProtocol

@@ -1,0 +1,70 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "AltSign",
+        "repositoryURL": "https://github.com/EricRabil/AltSign",
+        "state": {
+          "branch": "swift_rewrite",
+          "revision": "ad395dbf3c796810f04b3fbbb5cbf3fc8aa3e0b2",
+          "version": null
+        }
+      },
+      {
+        "package": "App Center",
+        "repositoryURL": "https://github.com/microsoft/appcenter-sdk-apple",
+        "state": {
+          "branch": null,
+          "revision": "0daf878bbb2942261eeb54b7af0722f8c1434a2a",
+          "version": "3.2.0"
+        }
+      },
+      {
+        "package": "KeychainAccess",
+        "repositoryURL": "https://github.com/kishikawakatsumi/KeychainAccess",
+        "state": {
+          "branch": null,
+          "revision": "84e546727d66f1adc5439debad16270d0fdd04e7",
+          "version": "4.2.2"
+        }
+      },
+      {
+        "package": "LaunchAtLogin",
+        "repositoryURL": "https://github.com/sindresorhus/LaunchAtLogin",
+        "state": {
+          "branch": null,
+          "revision": "6b16bcdf7d45a9d76a768a5c4912dde925cf0e95",
+          "version": "4.1.0"
+        }
+      },
+      {
+        "package": "Nuke",
+        "repositoryURL": "https://github.com/kean/Nuke",
+        "state": {
+          "branch": null,
+          "revision": "9318d02a8a6d20af56505c9673261c1fd3b3aebe",
+          "version": "7.6.3"
+        }
+      },
+      {
+        "package": "PLCrashReporter",
+        "repositoryURL": "https://github.com/microsoft/plcrashreporter.git",
+        "state": {
+          "branch": null,
+          "revision": "e45813d869f10beaaa2b2af88f9c5492d711feed",
+          "version": "1.6.0"
+        }
+      },
+      {
+        "package": "Sparkle",
+        "repositoryURL": "https://github.com/Sparkle-Project/Sparkle",
+        "state": {
+          "branch": null,
+          "revision": "891afd44c7075e699924ed9b81d8dc94a5111dfd",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}

@@ -7,20 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0E33F94B8D78AB969FD309A3 /* Pods_AltStoreCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A08F67C18350C7990753F03F /* Pods_AltStoreCore.framework */; };
-		2A77E3D272F3D92436FAC272 /* Pods_AltStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9EEAA842DA87A88A870053B /* Pods_AltStore.framework */; };
+		1D2D24F6268E23000041333B /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = 1D2D24F5268E23000041333B /* Sparkle */; };
+		1D558EB9268E23BA005530FB /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = 1D558EB8268E23BA005530FB /* Nuke */; };
+		1D5DE34B268E1EAB0063EC44 /* AltSign-Static in Frameworks */ = {isa = PBXBuildFile; productRef = 1D5DE34A268E1EAB0063EC44 /* AltSign-Static */; };
+		1D5DE34D268E1EC90063EC44 /* AltSign-Static in Frameworks */ = {isa = PBXBuildFile; productRef = 1D5DE34C268E1EC90063EC44 /* AltSign-Static */; };
+		1D5DE352268E1FF00063EC44 /* AppCenterCrashes in Frameworks */ = {isa = PBXBuildFile; productRef = 1D5DE351268E1FF00063EC44 /* AppCenterCrashes */; };
+		1D5DE354268E1FF00063EC44 /* AppCenterAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 1D5DE353268E1FF00063EC44 /* AppCenterAnalytics */; };
+		1D8211AF268E37E300500CEE /* OpenSSL.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DDD1C89268E2A670012F272 /* OpenSSL.xcframework */; };
+		1D8211B0268E37E300500CEE /* OpenSSL.xcframework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1DDD1C89268E2A670012F272 /* OpenSSL.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1D8211B1268E469200500CEE /* libimobiledevice.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF45872B2298D31600BD7491 /* libimobiledevice.a */; };
+		1D8211B8268E473E00500CEE /* AltSign-Static in Frameworks */ = {isa = PBXBuildFile; productRef = 1D8211B7268E473E00500CEE /* AltSign-Static */; };
+		1D8211BA268E4ADD00500CEE /* AltSign-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 1D8211B9268E4ADD00500CEE /* AltSign-Dynamic */; };
+		1D8211BB268E4ADD00500CEE /* AltSign-Dynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 1D8211B9268E4ADD00500CEE /* AltSign-Dynamic */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		1D996065268E2350005A37D4 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 1D996064268E2350005A37D4 /* KeychainAccess */; };
+		1DDD1C8A268E2A670012F272 /* OpenSSL.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DDD1C89268E2A670012F272 /* OpenSSL.xcframework */; };
+		1DDD1C8C268E2BE40012F272 /* CCoreCrypto in Frameworks */ = {isa = PBXBuildFile; productRef = 1DDD1C8B268E2BE40012F272 /* CCoreCrypto */; };
+		1DDD1C94268E2C6A0012F272 /* CAltSign in Frameworks */ = {isa = PBXBuildFile; productRef = 1DDD1C93268E2C6A0012F272 /* CAltSign */; };
+		1DDD1C96268E2CC90012F272 /* CAltSign in Frameworks */ = {isa = PBXBuildFile; productRef = 1DDD1C95268E2CC90012F272 /* CAltSign */; };
+		1DDD1C98268E2D050012F272 /* OpenSSL in Frameworks */ = {isa = PBXBuildFile; productRef = 1DDD1C97268E2D050012F272 /* OpenSSL */; };
+		1DDD1C9B268E2D180012F272 /* OpenSSL in Frameworks */ = {isa = PBXBuildFile; productRef = 1DDD1C9A268E2D180012F272 /* OpenSSL */; };
+		1DDD1CA7268E2F7D0012F272 /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 1DDD1CA6268E2F7D0012F272 /* LaunchAtLogin */; };
 		A8BCEBEAC0620CF80A2FD26D /* Pods_AltServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC3822AB1C4CF1D4CDF7445D /* Pods_AltServer.framework */; };
 		BF02419622F2199300129732 /* RefreshAttemptsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF02419522F2199300129732 /* RefreshAttemptsViewController.swift */; };
 		BF0241AA22F29CCD00129732 /* UserDefaults+AltServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0241A922F29CCD00129732 /* UserDefaults+AltServer.swift */; };
 		BF08858322DE795100DE9F1E /* MyAppsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF08858222DE795100DE9F1E /* MyAppsViewController.swift */; };
 		BF08858522DE7EC800DE9F1E /* UpdateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF08858422DE7EC800DE9F1E /* UpdateCollectionViewCell.swift */; };
 		BF088D0F25019ABA008082D9 /* AltSign-Static in Frameworks */ = {isa = PBXBuildFile; productRef = BF088D0E25019ABA008082D9 /* AltSign-Static */; };
-		BF088D332501A4FF008082D9 /* OpenSSL.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF088D322501A4FF008082D9 /* OpenSSL.xcframework */; };
-		BF088D342501A4FF008082D9 /* OpenSSL.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BF088D322501A4FF008082D9 /* OpenSSL.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		BF088D362501A821008082D9 /* AltSign-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = BF088D352501A821008082D9 /* AltSign-Dynamic */; };
-		BF088D372501A821008082D9 /* AltSign-Dynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = BF088D352501A821008082D9 /* AltSign-Dynamic */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		BF088D382501A833008082D9 /* OpenSSL.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF088D322501A4FF008082D9 /* OpenSSL.xcframework */; };
-		BF088D392501A833008082D9 /* OpenSSL.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BF088D322501A4FF008082D9 /* OpenSSL.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BF0C4EBD22A1BD8B009A2DD7 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0C4EBC22A1BD8B009A2DD7 /* AppManager.swift */; };
 		BF0DCA662433BDF500E3A595 /* AnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0DCA652433BDF500E3A595 /* AnalyticsManager.swift */; };
 		BF10EB34248730750055E6DB /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF10EB33248730750055E6DB /* main.swift */; };
@@ -45,10 +57,6 @@
 		BF41B806233423AE00C593A3 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF41B805233423AE00C593A3 /* TabBarController.swift */; };
 		BF41B808233433C100C593A3 /* LoadingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF41B807233433C100C593A3 /* LoadingState.swift */; };
 		BF42345A25101C35006D1EB2 /* WidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF42345825101C1D006D1EB2 /* WidgetView.swift */; };
-		BF42345C251024B0006D1EB2 /* AltSign-Static in Frameworks */ = {isa = PBXBuildFile; productRef = BF42345B251024B0006D1EB2 /* AltSign-Static */; };
-		BF42345D25102688006D1EB2 /* OpenSSL.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF088D322501A4FF008082D9 /* OpenSSL.xcframework */; };
-		BF44CC6C232AEB90004DA9C3 /* LaunchAtLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF44CC6A232AEB74004DA9C3 /* LaunchAtLogin.framework */; };
-		BF44CC6D232AEB90004DA9C3 /* LaunchAtLogin.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BF44CC6A232AEB74004DA9C3 /* LaunchAtLogin.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BF44EEF0246B08BA002A52F2 /* BackupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF44EEEF246B08BA002A52F2 /* BackupController.swift */; };
 		BF44EEF3246B3A17002A52F2 /* AltBackup.ipa in Resources */ = {isa = PBXBuildFile; fileRef = BF44EEF2246B3A17002A52F2 /* AltBackup.ipa */; };
 		BF44EEFC246B4550002A52F2 /* RemoveAppOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF44EEFB246B4550002A52F2 /* RemoveAppOperation.swift */; };
@@ -115,7 +123,6 @@
 		BF4588402298D3F800BD7491 /* collection.h in Headers */ = {isa = PBXBuildFile; fileRef = BF45883E2298D3F800BD7491 /* collection.h */; };
 		BF4588412298D3F800BD7491 /* collection.c in Sources */ = {isa = PBXBuildFile; fileRef = BF45883F2298D3F800BD7491 /* collection.c */; };
 		BF4588432298D40000BD7491 /* libusbmuxd.c in Sources */ = {isa = PBXBuildFile; fileRef = BF4588422298D40000BD7491 /* libusbmuxd.c */; };
-		BF4588472298D4B000BD7491 /* libimobiledevice.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF45872B2298D31600BD7491 /* libimobiledevice.a */; };
 		BF45884A2298D55000BD7491 /* thread.c in Sources */ = {isa = PBXBuildFile; fileRef = BF4588482298D55000BD7491 /* thread.c */; };
 		BF45884B2298D55000BD7491 /* thread.h in Headers */ = {isa = PBXBuildFile; fileRef = BF4588492298D55000BD7491 /* thread.h */; };
 		BF4588882298DD3F00BD7491 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BF4588872298DD3F00BD7491 /* libxml2.tbd */; };
@@ -234,7 +241,6 @@
 		BFB3645A2325985F00CD0EB1 /* FindServerOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB364592325985F00CD0EB1 /* FindServerOperation.swift */; };
 		BFB39B5C252BC10E00D1BE50 /* Managed.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB39B5B252BC10E00D1BE50 /* Managed.swift */; };
 		BFB4323F22DE852000B7F8BC /* UpdateCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFB4323E22DE852000B7F8BC /* UpdateCollectionViewCell.xib */; };
-		BFB49AAA23834CF900D542D9 /* ALTAnisetteData.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB49AA823834CF900D542D9 /* ALTAnisetteData.m */; };
 		BFB6B21E231870160022A802 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB6B21D231870160022A802 /* NewsViewController.swift */; };
 		BFB6B220231870B00022A802 /* NewsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB6B21F231870B00022A802 /* NewsCollectionViewCell.swift */; };
 		BFB6B22423187A3D0022A802 /* NewsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFB6B22323187A3D0022A802 /* NewsCollectionViewCell.xib */; };
@@ -348,17 +354,9 @@
 		BFF767C82489A74E0097E58C /* WirelessConnectionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF767C72489A74E0097E58C /* WirelessConnectionHandler.swift */; };
 		BFF7C90F257844C900E55F36 /* AltXPC.xpc in Embed XPC Services */ = {isa = PBXBuildFile; fileRef = BFF7C904257844C900E55F36 /* AltXPC.xpc */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		BFF7C920257844FA00E55F36 /* ALTPluginService.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5C5FCE237DF69100EDD0C6 /* ALTPluginService.m */; };
-		BFF7C9342578492100E55F36 /* ALTAnisetteData.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB49AA823834CF900D542D9 /* ALTAnisetteData.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		BF4588442298D48B00BD7491 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFD247622284B9A500981D42 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = BF45872A2298D31600BD7491;
-			remoteInfo = libimobiledevice;
-		};
 		BF66EE832501AE50007EE018 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFD247622284B9A500981D42 /* Project object */;
@@ -390,15 +388,33 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		1D558EBC268E2873005530FB /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1DDD1C91268E2C050012F272 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BF0201BC22C2EFA3000B93E4 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				BF088D392501A833008082D9 /* OpenSSL.xcframework in Embed Frameworks */,
-				BF44CC6D232AEB90004DA9C3 /* LaunchAtLogin.framework in Embed Frameworks */,
-				BF088D372501A821008082D9 /* AltSign-Dynamic in Embed Frameworks */,
+				1D8211BB268E4ADD00500CEE /* AltSign-Dynamic in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -410,7 +426,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				BF1614F2250822F100767AEA /* Roxas.framework in Embed Frameworks */,
-				BF088D342501A4FF008082D9 /* OpenSSL.xcframework in Embed Frameworks */,
 				BF66EE862501AE50007EE018 /* AltStoreCore.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -422,6 +437,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				1D8211B0268E37E300500CEE /* OpenSSL.xcframework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,16 +467,13 @@
 
 /* Begin PBXFileReference section */
 		11611D46F8A7C8B928E8156B /* Pods-AltServer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AltServer.debug.xcconfig"; path = "Target Support Files/Pods-AltServer/Pods-AltServer.debug.xcconfig"; sourceTree = "<group>"; };
+		1DDD1C89268E2A670012F272 /* OpenSSL.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = OpenSSL.xcframework; path = "/Users/ericrabil/Library/Developer/Xcode/DerivedData/AltStore-cwmjtriywyfzcrfqcecwtwfayqcr/SourcePackages/checkouts/AltSign/Dependencies/OpenSSL/Frameworks/OpenSSL.xcframework"; sourceTree = "<absolute>"; };
+		1DDD1CA8268E2FCB0012F272 /* libimobiledevice-1.0.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libimobiledevice-1.0.6.dylib"; path = "../../../../opt/procursus/lib/libimobiledevice-1.0.6.dylib"; sourceTree = "<group>"; };
 		589BA531D903B28F292063E5 /* Pods-AltServer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AltServer.release.xcconfig"; path = "Target Support Files/Pods-AltServer/Pods-AltServer.release.xcconfig"; sourceTree = "<group>"; };
-		A08F67C18350C7990753F03F /* Pods_AltStoreCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AltStoreCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A136EE677716B80768E9F0A2 /* Pods-AltStore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AltStore.release.xcconfig"; path = "Target Support Files/Pods-AltStore/Pods-AltStore.release.xcconfig"; sourceTree = "<group>"; };
-		B39BC452F0753C2C33A2D43B /* Pods-AltStoreCore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AltStoreCore.debug.xcconfig"; path = "Target Support Files/Pods-AltStoreCore/Pods-AltStoreCore.debug.xcconfig"; sourceTree = "<group>"; };
-		BC373DB2C2B6CB739CCBFB5F /* Pods-AltStoreCore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AltStoreCore.release.xcconfig"; path = "Target Support Files/Pods-AltStoreCore/Pods-AltStoreCore.release.xcconfig"; sourceTree = "<group>"; };
 		BF02419522F2199300129732 /* RefreshAttemptsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshAttemptsViewController.swift; sourceTree = "<group>"; };
 		BF0241A922F29CCD00129732 /* UserDefaults+AltServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+AltServer.swift"; sourceTree = "<group>"; };
 		BF08858222DE795100DE9F1E /* MyAppsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAppsViewController.swift; sourceTree = "<group>"; };
 		BF08858422DE7EC800DE9F1E /* UpdateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCollectionViewCell.swift; sourceTree = "<group>"; };
-		BF088D322501A4FF008082D9 /* OpenSSL.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = OpenSSL.xcframework; path = Dependencies/AltSign/Dependencies/OpenSSL/Frameworks/OpenSSL.xcframework; sourceTree = "<group>"; };
 		BF0C4EBC22A1BD8B009A2DD7 /* AppManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
 		BF0DCA652433BDF500E3A595 /* AnalyticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsManager.swift; sourceTree = "<group>"; };
 		BF10EB33248730750055E6DB /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -797,8 +810,6 @@
 		BFF7C93B257849C600E55F36 /* AltXPC.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AltXPC.entitlements; sourceTree = "<group>"; };
 		BFF7EC4C25081E9300BDE521 /* AltStore 8.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "AltStore 8.xcdatamodel"; sourceTree = "<group>"; };
 		BFFCFA45248835530077BFCE /* AltDaemon.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AltDaemon.entitlements; sourceTree = "<group>"; };
-		C9EEAA842DA87A88A870053B /* Pods_AltStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AltStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EA79A60285C6AF5848AA16E9 /* Pods-AltStore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AltStore.debug.xcconfig"; path = "Target Support Files/Pods-AltStore/Pods-AltStore.debug.xcconfig"; sourceTree = "<group>"; };
 		FC3822AB1C4CF1D4CDF7445D /* Pods_AltServer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AltServer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -807,6 +818,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DDD1C8A268E2A670012F272 /* OpenSSL.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -822,11 +834,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF088D382501A833008082D9 /* OpenSSL.xcframework in Frameworks */,
+				1DDD1CA7268E2F7D0012F272 /* LaunchAtLogin in Frameworks */,
+				1D2D24F6268E23000041333B /* Sparkle in Frameworks */,
 				BF4588882298DD3F00BD7491 /* libxml2.tbd in Frameworks */,
-				BF44CC6C232AEB90004DA9C3 /* LaunchAtLogin.framework in Frameworks */,
-				BF4588472298D4B000BD7491 /* libimobiledevice.a in Frameworks */,
-				BF088D362501A821008082D9 /* AltSign-Dynamic in Frameworks */,
+				1D8211B1268E469200500CEE /* libimobiledevice.a in Frameworks */,
+				1D8211BA268E4ADD00500CEE /* AltSign-Dynamic in Frameworks */,
 				A8BCEBEAC0620CF80A2FD26D /* Pods_AltServer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -843,6 +855,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D8211AF268E37E300500CEE /* OpenSSL.xcframework in Frameworks */,
+				1DDD1C96268E2CC90012F272 /* CAltSign in Frameworks */,
+				1DDD1C98268E2D050012F272 /* OpenSSL in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -850,9 +865,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF42345D25102688006D1EB2 /* OpenSSL.xcframework in Frameworks */,
-				BF42345C251024B0006D1EB2 /* AltSign-Static in Frameworks */,
-				0E33F94B8D78AB969FD309A3 /* Pods_AltStoreCore.framework in Frameworks */,
+				1D996065268E2350005A37D4 /* KeychainAccess in Frameworks */,
+				1D5DE34D268E1EC90063EC44 /* AltSign-Static in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -869,9 +883,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF1614F1250822F100767AEA /* Roxas.framework in Frameworks */,
-				BF088D332501A4FF008082D9 /* OpenSSL.xcframework in Frameworks */,
+				1D5DE354268E1FF00063EC44 /* AppCenterAnalytics in Frameworks */,
+				1D558EB9268E23BA005530FB /* Nuke in Frameworks */,
+				1D5DE352268E1FF00063EC44 /* AppCenterCrashes in Frameworks */,
 				BF66EE852501AE50007EE018 /* AltStoreCore.framework in Frameworks */,
-				2A77E3D272F3D92436FAC272 /* Pods_AltStore.framework in Frameworks */,
+				1D5DE34B268E1EAB0063EC44 /* AltSign-Static in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -879,6 +895,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DDD1C9B268E2D180012F272 /* OpenSSL in Frameworks */,
+				1D8211B8268E473E00500CEE /* AltSign-Static in Frameworks */,
+				1DDD1C8C268E2BE40012F272 /* CCoreCrypto in Frameworks */,
+				1DDD1C94268E2C6A0012F272 /* CAltSign in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -888,12 +908,8 @@
 		4460E048E3AC1C9708C4FA33 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				EA79A60285C6AF5848AA16E9 /* Pods-AltStore.debug.xcconfig */,
-				A136EE677716B80768E9F0A2 /* Pods-AltStore.release.xcconfig */,
 				11611D46F8A7C8B928E8156B /* Pods-AltServer.debug.xcconfig */,
 				589BA531D903B28F292063E5 /* Pods-AltServer.release.xcconfig */,
-				B39BC452F0753C2C33A2D43B /* Pods-AltStoreCore.debug.xcconfig */,
-				BC373DB2C2B6CB739CCBFB5F /* Pods-AltStoreCore.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -1492,14 +1508,13 @@
 		BFD247852284BB3300981D42 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BF088D322501A4FF008082D9 /* OpenSSL.xcframework */,
+				1DDD1CA8268E2FCB0012F272 /* libimobiledevice-1.0.6.dylib */,
+				1DDD1C89268E2A670012F272 /* OpenSSL.xcframework */,
 				BF580497246A3D19008AE704 /* UIKit.framework */,
 				BF44CC6A232AEB74004DA9C3 /* LaunchAtLogin.framework */,
 				BF4588872298DD3F00BD7491 /* libxml2.tbd */,
 				BFD247862284BB3B00981D42 /* Roxas.framework */,
 				FC3822AB1C4CF1D4CDF7445D /* Pods_AltServer.framework */,
-				C9EEAA842DA87A88A870053B /* Pods_AltStore.framework */,
-				A08F67C18350C7990753F03F /* Pods_AltStoreCore.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1815,12 +1830,14 @@
 			buildRules = (
 			);
 			dependencies = (
-				BF4588452298D48B00BD7491 /* PBXTargetDependency */,
+				1DDD1CA1268E2EAE0012F272 /* PBXTargetDependency */,
 				BFF7C90E257844C900E55F36 /* PBXTargetDependency */,
 			);
 			name = AltServer;
 			packageProductDependencies = (
-				BF088D352501A821008082D9 /* AltSign-Dynamic */,
+				1D2D24F5268E23000041333B /* Sparkle */,
+				1DDD1CA6268E2F7D0012F272 /* LaunchAtLogin */,
+				1D8211B9268E4ADD00500CEE /* AltSign-Dynamic */,
 			);
 			productName = AltServer;
 			productReference = BF45868D229872EA00BD7491 /* AltServer.app */;
@@ -1833,12 +1850,15 @@
 				BF4587272298D31600BD7491 /* Headers */,
 				BF4587282298D31600BD7491 /* Sources */,
 				678E094C3184B66357EAA4AF /* Frameworks */,
+				1D558EBC268E2873005530FB /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = libimobiledevice;
+			packageProductDependencies = (
+			);
 			productName = libimobiledevice;
 			productReference = BF45872B2298D31600BD7491 /* libimobiledevice.a */;
 			productType = "com.apple.product-type.library.static";
@@ -1874,6 +1894,10 @@
 			dependencies = (
 			);
 			name = AltPlugin;
+			packageProductDependencies = (
+				1DDD1C95268E2CC90012F272 /* CAltSign */,
+				1DDD1C97268E2D050012F272 /* OpenSSL */,
+			);
 			productName = AltPlugin;
 			productReference = BF5C5FC5237DF5AE00EDD0C6 /* AltPlugin.mailbundle */;
 			productType = "com.apple.product-type.bundle";
@@ -1882,7 +1906,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BF66EE892501AE50007EE018 /* Build configuration list for PBXNativeTarget "AltStoreCore" */;
 			buildPhases = (
-				702C290C354EA165FF645858 /* [CP] Check Pods Manifest.lock */,
 				BF66EE792501AE50007EE018 /* Headers */,
 				BF66EE7A2501AE50007EE018 /* Sources */,
 				BF66EE7B2501AE50007EE018 /* Frameworks */,
@@ -1891,10 +1914,12 @@
 			buildRules = (
 			);
 			dependencies = (
+				1D5DE34F268E1EEE0063EC44 /* PBXTargetDependency */,
 			);
 			name = AltStoreCore;
 			packageProductDependencies = (
-				BF42345B251024B0006D1EB2 /* AltSign-Static */,
+				1D5DE34C268E1EC90063EC44 /* AltSign-Static */,
+				1D996064268E2350005A37D4 /* KeychainAccess */,
 			);
 			productName = AltStoreCore;
 			productReference = BF66EE7E2501AE50007EE018 /* AltStoreCore.framework */;
@@ -1922,12 +1947,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BFD2477E2284B9A700981D42 /* Build configuration list for PBXNativeTarget "AltStore" */;
 			buildPhases = (
-				FFB93342C7EB2021A1FFFB6A /* [CP] Check Pods Manifest.lock */,
 				BFD247662284B9A500981D42 /* Sources */,
 				BFD247672284B9A500981D42 /* Frameworks */,
 				BFD247682284B9A500981D42 /* Resources */,
 				BF088D2B2501A087008082D9 /* Embed Frameworks */,
-				744AE3B03F6BF664FC5705C5 /* [CP] Embed Pods Frameworks */,
 				BF98917B250AABF4002ACF50 /* Embed App Extensions */,
 			);
 			buildRules = (
@@ -1937,6 +1960,12 @@
 				BF989176250AABF4002ACF50 /* PBXTargetDependency */,
 			);
 			name = AltStore;
+			packageProductDependencies = (
+				1D5DE34A268E1EAB0063EC44 /* AltSign-Static */,
+				1D5DE351268E1FF00063EC44 /* AppCenterCrashes */,
+				1D5DE353268E1FF00063EC44 /* AppCenterAnalytics */,
+				1D558EB8268E23BA005530FB /* Nuke */,
+			);
 			productName = AltStore;
 			productReference = BFD2476A2284B9A500981D42 /* AltStore.app */;
 			productType = "com.apple.product-type.application";
@@ -1948,12 +1977,19 @@
 				BFF7C900257844C900E55F36 /* Sources */,
 				BFF7C901257844C900E55F36 /* Frameworks */,
 				BFF7C902257844C900E55F36 /* Resources */,
+				1DDD1C91268E2C050012F272 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = AltXPC;
+			packageProductDependencies = (
+				1DDD1C8B268E2BE40012F272 /* CCoreCrypto */,
+				1DDD1C93268E2C6A0012F272 /* CAltSign */,
+				1DDD1C9A268E2D180012F272 /* OpenSSL */,
+				1D8211B7268E473E00500CEE /* AltSign-Static */,
+			);
 			productName = AltXPC;
 			productReference = BFF7C904257844C900E55F36 /* AltXPC.xpc */;
 			productType = "com.apple.product-type.xpc-service";
@@ -2028,6 +2064,14 @@
 				Base,
 			);
 			mainGroup = BFD247612284B9A500981D42;
+			packageReferences = (
+				1D5DE349268E1EAB0063EC44 /* XCRemoteSwiftPackageReference "AltSign" */,
+				1D5DE350268E1FF00063EC44 /* XCRemoteSwiftPackageReference "appcenter-sdk-apple" */,
+				1D2D24F4268E23000041333B /* XCRemoteSwiftPackageReference "Sparkle" */,
+				1D996063268E2350005A37D4 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
+				1D558EB7268E23BA005530FB /* XCRemoteSwiftPackageReference "Nuke" */,
+				1DDD1C9C268E2D5F0012F272 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */,
+			);
 			productRefGroup = BFD2476B2284B9A500981D42 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -2119,45 +2163,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		702C290C354EA165FF645858 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-AltStoreCore-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		744AE3B03F6BF664FC5705C5 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AltStore/Pods-AltStore-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AltStore/Pods-AltStore-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AltStore/Pods-AltStore-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		98BF22D155DBAEA97544E3E6 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -2191,7 +2196,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PROJECT_DIR}/Carthage/Build/Mac/LaunchAtLogin.framework/Resources/copy-helper.sh\"\n";
+			shellScript = "\"${BUILT_PRODUCTS_DIR}/LaunchAtLogin_LaunchAtLogin.bundle/Contents/Resources/copy-helper-swiftpm.sh\"\n\ncp -r \"${BUILT_PRODUCTS_DIR}/Sparkle.framework\" \"$BUILT_PRODUCTS_DIR/$CONTENTS_FOLDER_PATH/Frameworks/Sparkle.framework\"\n";
 		};
 		BF914C242383659400E713BA /* Sign Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2227,28 +2232,6 @@
 			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-AltServer-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FFB93342C7EB2021A1FFFB6A /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-AltStore-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2396,7 +2379,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BFB49AAA23834CF900D542D9 /* ALTAnisetteData.m in Sources */,
 				BF5C5FCF237DF69100EDD0C6 /* ALTPluginService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2565,7 +2547,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BFF7C9342578492100E55F36 /* ALTAnisetteData.m in Sources */,
 				BFF7C920257844FA00E55F36 /* ALTPluginService.m in Sources */,
 				BF77A67E25795BBE00BFE477 /* main.swift in Sources */,
 				BF77A67025795A5600BFE477 /* AltXPC.swift in Sources */,
@@ -2575,10 +2556,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		BF4588452298D48B00BD7491 /* PBXTargetDependency */ = {
+		1D5DE34F268E1EEE0063EC44 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = BF45872A2298D31600BD7491 /* libimobiledevice */;
-			targetProxy = BF4588442298D48B00BD7491 /* PBXContainerItemProxy */;
+		};
+		1DDD1CA1268E2EAE0012F272 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 1DDD1CA0268E2EAE0012F272 /* cmobiledevice */;
 		};
 		BF66EE842501AE50007EE018 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -2734,7 +2717,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 52;
-				DEVELOPMENT_TEAM = 6XVY5G3U44;
+				DEVELOPMENT_TEAM = 6UW2D7F2RU;
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2751,8 +2734,6 @@
 				);
 				HEADER_SEARCH_PATHS = (
 					"\"$(SRCROOT)/Dependencies/AltSign/Dependencies/ldid/libplist/include\"",
-					"\"$(SRCROOT)/Dependencies/libimobiledevice\"",
-					"\"$(SRCROOT)/Dependencies/libimobiledevice/include\"",
 					"\"$(SRCROOT)/Dependencies/AltSign/Dependencies/OpenSSL/macos/include\"",
 					"\"$(SRCROOT)/Dependencies/libusbmuxd/include\"",
 					"\"$(SRCROOT)/Dependencies/AltSign/Dependencies/libzip/lib\"",
@@ -2765,9 +2746,13 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/procursus/lib,
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14.4;
 				MARKETING_VERSION = 1.5b5;
-				PRODUCT_BUNDLE_IDENTIFIER = com.rileytestut.AltServer;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ericrabil.rileytestut.AltServer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_OBJC_BRIDGING_HEADER = "AltServer/AltServer-Bridging-Header.h";
@@ -2787,7 +2772,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 52;
-				DEVELOPMENT_TEAM = 6XVY5G3U44;
+				DEVELOPMENT_TEAM = 6UW2D7F2RU;
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2804,8 +2789,6 @@
 				);
 				HEADER_SEARCH_PATHS = (
 					"\"$(SRCROOT)/Dependencies/AltSign/Dependencies/ldid/libplist/include\"",
-					"\"$(SRCROOT)/Dependencies/libimobiledevice\"",
-					"\"$(SRCROOT)/Dependencies/libimobiledevice/include\"",
 					"\"$(SRCROOT)/Dependencies/AltSign/Dependencies/OpenSSL/macos/include\"",
 					"\"$(SRCROOT)/Dependencies/libusbmuxd/include\"",
 					"\"$(SRCROOT)/Dependencies/AltSign/Dependencies/libzip/lib\"",
@@ -2818,9 +2801,13 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/procursus/lib,
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14.4;
 				MARKETING_VERSION = 1.5b5;
-				PRODUCT_BUNDLE_IDENTIFIER = com.rileytestut.AltServer;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ericrabil.rileytestut.AltServer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_OBJC_BRIDGING_HEADER = "AltServer/AltServer-Bridging-Header.h";
@@ -2911,14 +2898,14 @@
 				CODE_SIGN_ENTITLEMENTS = AltBackup/AltBackup.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = 6XVY5G3U44;
+				DEVELOPMENT_TEAM = 6UW2D7F2RU;
 				INFOPLIST_FILE = AltBackup/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.rileytestut.AltBackup;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ericrabil.rileytestut.AltBackup;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2938,7 +2925,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.rileytestut.AltBackup;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ericrabil.rileytestut.AltBackup;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2957,16 +2944,10 @@
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = AltPlugin/Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Mail/Bundles/";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-					"/Users/Riley/Library/Developer/Xcode/DerivedData/AltStore-bhqnkrahfutztzeudtxhcxccgtlo/Build/Products/Debug",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MARKETING_VERSION = 1.5;
-				PRODUCT_BUNDLE_IDENTIFIER = com.rileytestut.AltPlugin;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ericrabil.rileytestut.AltPlugin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = NO;
@@ -2988,16 +2969,10 @@
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = AltPlugin/Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Mail/Bundles/";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-					"/Users/Riley/Library/Developer/Xcode/DerivedData/AltStore-bhqnkrahfutztzeudtxhcxccgtlo/Build/Products/Debug",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MARKETING_VERSION = 1.5;
-				PRODUCT_BUNDLE_IDENTIFIER = com.rileytestut.AltPlugin;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ericrabil.rileytestut.AltPlugin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = NO;
@@ -3008,7 +2983,6 @@
 		};
 		BF66EE872501AE50007EE018 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B39BC452F0753C2C33A2D43B /* Pods-AltStoreCore.debug.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -3018,7 +2992,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 6XVY5G3U44;
+				DEVELOPMENT_TEAM = 6UW2D7F2RU;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -3030,7 +3004,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.rileytestut.AltStoreCore;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ericrabil.rileytestut.AltStoreCore;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -3042,7 +3016,6 @@
 		};
 		BF66EE882501AE50007EE018 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BC373DB2C2B6CB739CCBFB5F /* Pods-AltStoreCore.release.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -3051,7 +3024,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 6XVY5G3U44;
+				DEVELOPMENT_TEAM = 6UW2D7F2RU;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -3063,7 +3036,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.rileytestut.AltStoreCore;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ericrabil.rileytestut.AltStoreCore;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -3082,10 +3055,10 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CODE_SIGN_ENTITLEMENTS = AltWidget/AltWidgetExtension.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = 6XVY5G3U44;
+				DEVELOPMENT_TEAM = 6UW2D7F2RU;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Dependencies/AltSign/Dependencies/OpenSSL/Frameworks/iossimulator",
@@ -3098,8 +3071,9 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.rileytestut.AltStore.AltWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ericrabil.rileytestut.AltStore.AltWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -3116,9 +3090,9 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CODE_SIGN_ENTITLEMENTS = AltWidget/AltWidgetExtension.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6XVY5G3U44;
+				DEVELOPMENT_TEAM = 6UW2D7F2RU;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Dependencies/AltSign/Dependencies/OpenSSL/Frameworks/iossimulator",
@@ -3131,8 +3105,9 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.rileytestut.AltStore.AltWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ericrabil.rileytestut.AltStore.AltWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -3202,7 +3177,7 @@
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG BETA";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SYSTEM_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Dependencies/AltSign/Dependencies\"";
+				SYSTEM_HEADER_SEARCH_PATHS = /opt/procursus/include;
 			};
 			name = Debug;
 		};
@@ -3262,14 +3237,13 @@
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx";
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SYSTEM_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Dependencies/AltSign/Dependencies\"";
+				SYSTEM_HEADER_SEARCH_PATHS = /opt/procursus/include;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		BFD2477F2284B9A700981D42 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EA79A60285C6AF5848AA16E9 /* Pods-AltStore.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -3277,15 +3251,15 @@
 				CODE_SIGN_ENTITLEMENTS = AltStore/AltStore.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6XVY5G3U44;
+				DEVELOPMENT_TEAM = 6UW2D7F2RU;
 				INFOPLIST_FILE = AltStore/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.rileytestut.AltStore;
 				MARKETING_VERSION = 1.4.6b;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ericrabil.rileytestut.AltStore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "AltStore/AltStore-Bridging-Header.h";
@@ -3297,7 +3271,6 @@
 		};
 		BFD247802284B9A700981D42 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A136EE677716B80768E9F0A2 /* Pods-AltStore.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -3305,15 +3278,15 @@
 				CODE_SIGN_ENTITLEMENTS = AltStore/AltStore.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6XVY5G3U44;
+				DEVELOPMENT_TEAM = 6UW2D7F2RU;
 				INFOPLIST_FILE = AltStore/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.rileytestut.AltStore;
 				MARKETING_VERSION = 1.4.6b;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ericrabil.rileytestut.AltStore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "AltStore/AltStore-Bridging-Header.h";
@@ -3333,7 +3306,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = 6XVY5G3U44;
+				DEVELOPMENT_TEAM = 6UW2D7F2RU;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = AltXPC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3342,7 +3315,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14.4;
-				PRODUCT_BUNDLE_IDENTIFIER = com.rileytestut.AltXPC;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ericrabil.rileytestut.AltXPC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
@@ -3362,7 +3335,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 6XVY5G3U44;
+				DEVELOPMENT_TEAM = 6UW2D7F2RU;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = AltXPC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3371,7 +3344,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14.4;
-				PRODUCT_BUNDLE_IDENTIFIER = com.rileytestut.AltXPC;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ericrabil.rileytestut.AltXPC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
@@ -3475,16 +3448,147 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		1D2D24F4268E23000041333B /* XCRemoteSwiftPackageReference "Sparkle" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Sparkle-Project/Sparkle";
+			requirement = {
+				kind = revision;
+				revision = 891afd44c7075e699924ed9b81d8dc94a5111dfd;
+			};
+		};
+		1D558EB7268E23BA005530FB /* XCRemoteSwiftPackageReference "Nuke" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kean/Nuke";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.6.3;
+			};
+		};
+		1D5DE349268E1EAB0063EC44 /* XCRemoteSwiftPackageReference "AltSign" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/EricRabil/AltSign";
+			requirement = {
+				branch = swift_rewrite;
+				kind = branch;
+			};
+		};
+		1D5DE350268E1FF00063EC44 /* XCRemoteSwiftPackageReference "appcenter-sdk-apple" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/microsoft/appcenter-sdk-apple";
+			requirement = {
+				kind = exactVersion;
+				version = 3.2.0;
+			};
+		};
+		1D996063268E2350005A37D4 /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.2.2;
+			};
+		};
+		1DDD1C9C268E2D5F0012F272 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/LaunchAtLogin";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.1.0;
+			};
+		};
+		1DDD1C9F268E2E9D0012F272 /* XCRemoteSwiftPackageReference "cmobiledevice" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/alexisakers/cmobiledevice";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
-		BF088D0E25019ABA008082D9 /* AltSign-Static */ = {
+		1D2D24F5268E23000041333B /* Sparkle */ = {
 			isa = XCSwiftPackageProductDependency;
+			package = 1D2D24F4268E23000041333B /* XCRemoteSwiftPackageReference "Sparkle" */;
+			productName = Sparkle;
+		};
+		1D558EB8268E23BA005530FB /* Nuke */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1D558EB7268E23BA005530FB /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = Nuke;
+		};
+		1D5DE34A268E1EAB0063EC44 /* AltSign-Static */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1D5DE349268E1EAB0063EC44 /* XCRemoteSwiftPackageReference "AltSign" */;
 			productName = "AltSign-Static";
 		};
-		BF088D352501A821008082D9 /* AltSign-Dynamic */ = {
+		1D5DE34C268E1EC90063EC44 /* AltSign-Static */ = {
 			isa = XCSwiftPackageProductDependency;
+			package = 1D5DE349268E1EAB0063EC44 /* XCRemoteSwiftPackageReference "AltSign" */;
+			productName = "AltSign-Static";
+		};
+		1D5DE351268E1FF00063EC44 /* AppCenterCrashes */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1D5DE350268E1FF00063EC44 /* XCRemoteSwiftPackageReference "appcenter-sdk-apple" */;
+			productName = AppCenterCrashes;
+		};
+		1D5DE353268E1FF00063EC44 /* AppCenterAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1D5DE350268E1FF00063EC44 /* XCRemoteSwiftPackageReference "appcenter-sdk-apple" */;
+			productName = AppCenterAnalytics;
+		};
+		1D8211B7268E473E00500CEE /* AltSign-Static */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1D5DE349268E1EAB0063EC44 /* XCRemoteSwiftPackageReference "AltSign" */;
+			productName = "AltSign-Static";
+		};
+		1D8211B9268E4ADD00500CEE /* AltSign-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1D5DE349268E1EAB0063EC44 /* XCRemoteSwiftPackageReference "AltSign" */;
 			productName = "AltSign-Dynamic";
 		};
-		BF42345B251024B0006D1EB2 /* AltSign-Static */ = {
+		1D996064268E2350005A37D4 /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1D996063268E2350005A37D4 /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
+		};
+		1DDD1C8B268E2BE40012F272 /* CCoreCrypto */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1D5DE349268E1EAB0063EC44 /* XCRemoteSwiftPackageReference "AltSign" */;
+			productName = CCoreCrypto;
+		};
+		1DDD1C93268E2C6A0012F272 /* CAltSign */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1D5DE349268E1EAB0063EC44 /* XCRemoteSwiftPackageReference "AltSign" */;
+			productName = CAltSign;
+		};
+		1DDD1C95268E2CC90012F272 /* CAltSign */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1D5DE349268E1EAB0063EC44 /* XCRemoteSwiftPackageReference "AltSign" */;
+			productName = CAltSign;
+		};
+		1DDD1C97268E2D050012F272 /* OpenSSL */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1D5DE349268E1EAB0063EC44 /* XCRemoteSwiftPackageReference "AltSign" */;
+			productName = OpenSSL;
+		};
+		1DDD1C9A268E2D180012F272 /* OpenSSL */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1D5DE349268E1EAB0063EC44 /* XCRemoteSwiftPackageReference "AltSign" */;
+			productName = OpenSSL;
+		};
+		1DDD1CA0268E2EAE0012F272 /* cmobiledevice */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1DDD1C9F268E2E9D0012F272 /* XCRemoteSwiftPackageReference "cmobiledevice" */;
+			productName = cmobiledevice;
+		};
+		1DDD1CA6268E2F7D0012F272 /* LaunchAtLogin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1DDD1C9C268E2D5F0012F272 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */;
+			productName = LaunchAtLogin;
+		};
+		BF088D0E25019ABA008082D9 /* AltSign-Static */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = "AltSign-Static";
 		};

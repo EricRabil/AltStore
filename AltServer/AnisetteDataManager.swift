@@ -13,7 +13,7 @@ private extension Bundle
     struct ID
     {
         static let mail = "com.apple.mail"
-        static let altXPC = "com.rileytestut.AltXPC"
+        static let altXPC = "com.ericrabil.rileytestut.AltXPC"
     }
 }
 

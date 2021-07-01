@@ -10,7 +10,8 @@
 
 #import <dlfcn.h>
 
-#import "ALTAnisetteData.h"
+//#import "ALTAnisetteData.h"
+#import <AltSign/ALTAnisetteData.h>
 
 @import AppKit;
 

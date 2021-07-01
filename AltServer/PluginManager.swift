@@ -12,7 +12,7 @@ import CryptoKit
 
 import STPrivilegedTask
 
-private let pluginDirectoryURL = URL(fileURLWithPath: "/Library/Mail/Bundles", isDirectory: true)
+private let pluginDirectoryURL = URL(fileURLWithPath: ("~/Library/Mail/Bundles" as NSString).expandingTildeInPath, isDirectory: true)
 private let pluginURL = pluginDirectoryURL.appendingPathComponent("AltPlugin.mailbundle")
 
 enum PluginError: LocalizedError
@@ -61,15 +61,16 @@ class PluginManager
     
     var isUpdateAvailable: Bool {
         guard let bundle = Bundle(url: pluginURL) else { return false }
-        
+
         // Load Info.plist from disk because Bundle.infoDictionary is cached by system.
         let infoDictionaryURL = bundle.bundleURL.appendingPathComponent("Contents/Info.plist")
         guard let infoDictionary = NSDictionary(contentsOf: infoDictionaryURL) as? [String: Any],
               let version = infoDictionary["CFBundleShortVersionString"] as? String
         else { return false }
-        
+
         let isUpdateAvailable = (version != self.preferredVersion.version)
         return isUpdateAvailable
+//        return false
     }
     
     private var preferredVersion: PluginVersion {
