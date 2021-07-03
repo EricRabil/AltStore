@@ -70,7 +70,6 @@ class PluginManager
 
         let isUpdateAvailable = (version != self.preferredVersion.version)
         return isUpdateAvailable
-//        return false
     }
     
     private var preferredVersion: PluginVersion {

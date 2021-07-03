@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import Combine
 import AltSign
 
 enum DeveloperDiskError: LocalizedError
@@ -87,200 +87,104 @@ class DeveloperDiskManager
         let osVersion = "\(device.osVersion.majorVersion).\(device.osVersion.minorVersion)"
         let osKeyPath: KeyPath<FetchURLsResponse.Disks, [String: DeveloperDiskURL]?>
         
-        switch device.type
-        {
-        case .iphone, .ipad: osKeyPath = \FetchURLsResponse.Disks.iOS
-        case .appletv: osKeyPath = \FetchURLsResponse.Disks.tvOS
-        default: return completionHandler(.failure(DeveloperDiskError.unsupportedOperatingSystem))
+        switch device.type {
+            case .iphone, .ipad: osKeyPath = \FetchURLsResponse.Disks.iOS
+            case .appletv: osKeyPath = \FetchURLsResponse.Disks.tvOS
+            default: return completionHandler(.failure(DeveloperDiskError.unsupportedOperatingSystem))
         }
         
-        do
-        {
+        let developerDiskDirectoryURL = FileManager.default.developerDisksDirectory.appendingPathComponent(osVersion)
+        let developerDiskURL = developerDiskDirectoryURL.appendingPathComponent("DeveloperDiskImage.dmg")
+        let developerDiskSignatureURL = developerDiskDirectoryURL.appendingPathComponent("DeveloperDiskImage.dmg.signature")
+        
+        guard !FileManager.default.fileExists(atPath: developerDiskURL.path) || !FileManager.default.fileExists(atPath: developerDiskSignatureURL.path) else {
+            return completionHandler(.success((developerDiskURL, developerDiskSignatureURL)))
+        }
+        
+        var cancellables = Set<AnyCancellable>()
+        
+        self.fetchDeveloperDiskURLs().tryMap { developerDiskURLs -> DeveloperDiskURL in
+            guard let diskURL = developerDiskURLs[keyPath: osKeyPath]?[osVersion] else {
+                throw DeveloperDiskError.unknownDownloadURL
+            }
+            
+            return diskURL
+        }.flatMap { diskURL -> AnyPublisher<(URL, URL), Error> in
+            switch diskURL {
+                case .archive(let archiveURL): return self.downloadDiskArchive(from: archiveURL)
+                case .separate(let diskURL, let signatureURL): return self.downloadDisk(from: diskURL, signatureURL: signatureURL)
+            }
+        }.tryMap { (diskFileURL, signatureFileURL) -> (URL, URL) in
             let developerDiskDirectoryURL = FileManager.default.developerDisksDirectory.appendingPathComponent(osVersion)
             try FileManager.default.createDirectory(at: developerDiskDirectoryURL, withIntermediateDirectories: true, attributes: nil)
             
-            let developerDiskURL = developerDiskDirectoryURL.appendingPathComponent("DeveloperDiskImage.dmg")
-            let developerDiskSignatureURL = developerDiskDirectoryURL.appendingPathComponent("DeveloperDiskImage.dmg.signature")
+            try FileManager.default.copyItem(at: diskFileURL, to: developerDiskURL)
+            try FileManager.default.copyItem(at: signatureFileURL, to: developerDiskSignatureURL)
             
-            guard !FileManager.default.fileExists(atPath: developerDiskURL.path) || !FileManager.default.fileExists(atPath: developerDiskSignatureURL.path) else {
-                return completionHandler(.success((developerDiskURL, developerDiskSignatureURL)))
-            }
-            
-            func finish(_ result: Result<(URL, URL), Error>)
-            {
-                do
-                {
-                    let (diskFileURL, signatureFileURL) = try result.get()
-                    
-                    let developerDiskDirectoryURL = FileManager.default.developerDisksDirectory.appendingPathComponent(osVersion)
-                    try FileManager.default.createDirectory(at: developerDiskDirectoryURL, withIntermediateDirectories: true, attributes: nil)
-                    
-                    try FileManager.default.copyItem(at: diskFileURL, to: developerDiskURL)
-                    try FileManager.default.copyItem(at: signatureFileURL, to: developerDiskSignatureURL)
-                    
-                    completionHandler(.success((developerDiskURL, developerDiskSignatureURL)))
-                }
-                catch
-                {
-                    completionHandler(.failure(error))
-                }
-            }
-            
-            self.fetchDeveloperDiskURLs { (result) in
-                do
-                {
-                    let developerDiskURLs = try result.get()
-                    guard let diskURL = developerDiskURLs[keyPath: osKeyPath]?[osVersion] else { throw DeveloperDiskError.unknownDownloadURL }
-                    
-                    switch diskURL
-                    {
-                    case .archive(let archiveURL): self.downloadDiskArchive(from: archiveURL, completionHandler: finish(_:))
-                    case .separate(let diskURL, let signatureURL): self.downloadDisk(from: diskURL, signatureURL: signatureURL, completionHandler: finish(_:))
-                    }
-                }
-                catch
-                {
-                    finish(.failure(error))
-                }
-            }
-        }
-        catch
-        {
-            completionHandler(.failure(error))
-        }
+            return (diskFileURL, signatureFileURL)
+        }.sink(receiveFailure: {
+            completionHandler(.failure($0))
+        }, receiveValue: { urls in
+            completionHandler(.success(urls))
+        }).store(in: &cancellables)
     }
 }
 
 private extension DeveloperDiskManager
 {
-    func fetchDeveloperDiskURLs(completionHandler: @escaping (Result<FetchURLsResponse.Disks, Error>) -> Void)
+    func fetchDeveloperDiskURLs() -> AnyPublisher<FetchURLsResponse.Disks, Error>
     {
-        let dataTask = URLSession.shared.dataTask(with: .developerDiskDownloadURLs) { (data, response, error) in
-            do
-            {
-                guard let data = data else { throw error! }
-                
-                let response = try JSONDecoder().decode(FetchURLsResponse.self, from: data)
-                completionHandler(.success(response.disks))
-            }
-            catch
-            {
-                completionHandler(.failure(error))
-            }
-        }
-        
-        dataTask.resume()
+        URLSession.shared.dataTaskPublisher(for: .developerDiskDownloadURLs).tryMap {
+            try JSONDecoder().decode(FetchURLsResponse.self, from: $0.data).disks
+        }.eraseToAnyPublisher()
     }
     
-    func downloadDiskArchive(from url: URL, completionHandler: @escaping (Result<(URL, URL), Error>) -> Void)
+    func downloadDiskArchive(from url: URL) -> AnyPublisher<(URL, URL), Error>
     {
-        let downloadTask = URLSession.shared.downloadTask(with: url) { (fileURL, response, error) in
-            do
-            {
-                guard let fileURL = fileURL else { throw error! }
-                defer { try? FileManager.default.removeItem(at: fileURL) }
-                
-                let temporaryDirectory = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString)
-                try FileManager.default.createDirectory(at: temporaryDirectory, withIntermediateDirectories: true, attributes: nil)
-                defer { try? FileManager.default.removeItem(at: temporaryDirectory) }
-                
-                try FileManager.default.unzipArchive(at: fileURL, toDirectory: temporaryDirectory)
-                
-                guard let enumerator = FileManager.default.enumerator(at: temporaryDirectory, includingPropertiesForKeys: nil, options: [.skipsHiddenFiles, .skipsPackageDescendants]) else {
-                    throw CocoaError(.fileNoSuchFile, userInfo: [NSURLErrorKey: temporaryDirectory])
-                }
-                
-                var tempDiskFileURL: URL?
-                var tempSignatureFileURL: URL?
-                
-                for case let fileURL as URL in enumerator
-                {
-                    switch fileURL.pathExtension.lowercased()
-                    {
-                    case "dmg": tempDiskFileURL = fileURL
-                    case "signature": tempSignatureFileURL = fileURL
-                    default: break
-                    }
-                }
-                
-                guard let diskFileURL = tempDiskFileURL, let signatureFileURL = tempSignatureFileURL else { throw DeveloperDiskError.downloadedDiskNotFound }
-                
-                completionHandler(.success((diskFileURL, signatureFileURL)))
+        URLSession.shared.downloadTaskPublisher(for: url).tryMap { (url, response) -> (URL, URL) in
+            let temporaryDirectory = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString)
+            try FileManager.default.createDirectory(at: temporaryDirectory, withIntermediateDirectories: true, attributes: nil)
+            
+            try FileManager.default.unzipArchive(at: url, toDirectory: temporaryDirectory)
+            
+            guard let enumerator = FileManager.default.enumerator(at: temporaryDirectory, includingPropertiesForKeys: nil, options: [.skipsHiddenFiles, .skipsPackageDescendants]) else {
+                throw CocoaError(.fileNoSuchFile, userInfo: [NSURLErrorKey: temporaryDirectory])
             }
-            catch
-            {
-                completionHandler(.failure(error))
+            
+            let (tempDiskFileURL, tempSignatureFileURL) = enumerator.compactMap { $0 as? URL }.reduce(into: (nil, nil) as (URL?, URL?)) { pair, url in
+                switch url.pathExtension.lowercased() {
+                case "dmg": pair.0 = url
+                case "signature": pair.1 = url
+                default: break
+                }
             }
-        }
-        
-        downloadTask.resume()
+            
+            guard let diskFileURL = tempDiskFileURL, let signatureFileURL = tempSignatureFileURL else {
+                throw DeveloperDiskError.downloadedDiskNotFound
+            }
+            
+            return (diskFileURL, signatureFileURL)
+        }.eraseToAnyPublisher()
     }
     
-    func downloadDisk(from diskURL: URL, signatureURL: URL, completionHandler: @escaping (Result<(URL, URL), Error>) -> Void)
+    func downloadDisk(from diskURL: URL, signatureURL: URL) -> AnyPublisher<(URL, URL), Error>
     {
         let temporaryDirectory = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString)
         
         do { try FileManager.default.createDirectory(at: temporaryDirectory, withIntermediateDirectories: true, attributes: nil) }
-        catch { return completionHandler(.failure(error)) }
-                
-        var diskFileURL: URL?
-        var signatureFileURL: URL?
+        catch { return Fail(error: error).eraseToAnyPublisher() }
         
-        var downloadError: Error?
-        
-        let dispatchGroup = DispatchGroup()
-        dispatchGroup.enter()
-        dispatchGroup.enter()
-                
-        let diskDownloadTask = URLSession.shared.downloadTask(with: diskURL) { (fileURL, response, error) in
-            do
-            {
-                guard let fileURL = fileURL else { throw error! }
-                
-                let destinationURL = temporaryDirectory.appendingPathComponent("DeveloperDiskImage.dmg")
-                try FileManager.default.copyItem(at: fileURL, to: destinationURL)
-                
-                diskFileURL = destinationURL
-            }
-            catch
-            {
-                downloadError = error
-            }
-            
-            dispatchGroup.leave()
+        func pipe(url: URL, toTemporaryName name: String) throws -> URL {
+            let destinationURL = temporaryDirectory.appendingPathComponent(name)
+            try FileManager.default.copyItem(at: url, to: destinationURL)
+            return destinationURL
         }
         
-        let signatureDownloadTask = URLSession.shared.downloadTask(with: signatureURL) { (fileURL, response, error) in
-            do
-            {
-                guard let fileURL = fileURL else { throw error! }
-                
-                let destinationURL = temporaryDirectory.appendingPathComponent("DeveloperDiskImage.dmg.signature")
-                try FileManager.default.copyItem(at: fileURL, to: destinationURL)
-                
-                signatureFileURL = destinationURL
-            }
-            catch
-            {
-                downloadError = error
-            }
-            
-            dispatchGroup.leave()
-        }
-        
-        diskDownloadTask.resume()
-        signatureDownloadTask.resume()
-        
-        dispatchGroup.notify(queue: .global(qos: .userInitiated)) {
-            defer {
-                try? FileManager.default.removeItem(at: temporaryDirectory)
-            }
-            
-            guard let diskFileURL = diskFileURL, let signatureFileURL = signatureFileURL else {
-                return completionHandler(.failure(downloadError ?? DeveloperDiskError.downloadedDiskNotFound))
-            }
-            
-            completionHandler(.success((diskFileURL, signatureFileURL)))
-        }
+        return Publishers.Zip(
+            URLSession.shared.downloadTaskPublisher(for: diskURL),
+            URLSession.shared.downloadTaskPublisher(for: signatureURL)
+        ).tryMap { (disk, signature) in
+            (disk: try pipe(url: disk.url, toTemporaryName: "DeveloperDiskImage.dmg"), signature: try pipe(url: signature.url, toTemporaryName: "DeveloperDiskImage.dmg.signature"))
+        }.eraseToAnyPublisher()
     }
 }

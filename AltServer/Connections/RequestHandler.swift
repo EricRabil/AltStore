@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Combine
 
 typealias ServerConnectionManager = ConnectionManager<ServerRequestHandler>
 
@@ -24,15 +25,11 @@ struct ServerRequestHandler: RequestHandler
 {
     func handleAnisetteDataRequest(_ request: AnisetteDataRequest, for connection: Connection, completionHandler: @escaping (Result<AnisetteDataResponse, Error>) -> Void)
     {
-        AnisetteDataManager.shared.requestAnisetteData { (result) in
-            switch result
-            {
-            case .failure(let error): completionHandler(.failure(error))
-            case .success(let anisetteData):
-                let response = AnisetteDataResponse(anisetteData: anisetteData)
-                completionHandler(.success(response))
-            }
-        }
+        var cancellables = Set<AnyCancellable>()
+        
+        AnisetteDataManager.shared.requestAnisetteData().map {
+            AnisetteDataResponse(anisetteData: $0)
+        }.sink(receiveResult: completionHandler).store(in: &cancellables)
     }
     
     func handlePrepareAppRequest(_ request: PrepareAppRequest, for connection: Connection, completionHandler: @escaping (Result<InstallationProgressResponse, Error>) -> Void)
@@ -144,15 +141,14 @@ struct ServerRequestHandler: RequestHandler
         }
     }
     
-    func handleEnableUnsignedCodeExecutionRequest(_ request: EnableUnsignedCodeExecutionRequest, for connection: Connection, completionHandler: @escaping (Result<EnableUnsignedCodeExecutionResponse, Error>) -> Void)
+    func handleEnableUnsignedCodeExecutionRequest(_ request: EnableUnsignedCodeExecutionRequest, for connection: Connection) -> AnyPublisher<EnableUnsignedCodeExecutionResponse, Error>
     {
-        guard let device = ALTDeviceManager.shared.availableDevices.first(where: { $0.identifier == request.udid }) else { return completionHandler(.failure(ALTServerError(.deviceNotFound))) }
+        guard let device = ALTDeviceManager.shared.availableDevices.first(where: { $0.identifier == request.udid }) else {
+            return Fail(error: ALTServerError(.deviceNotFound)).eraseToAnyPublisher()
+        }
         
-        ALTDeviceManager.shared.prepare(device) { result in
-            switch result
-            {
-            case .failure(let error): completionHandler(.failure(error))
-            case .success:
+        return ALTDeviceManager.shared.prepare(device).flatMap {
+            Future { completionHandler in
                 ALTDeviceManager.shared.startDebugConnection(to: device) { (connection, error) in
                     guard let connection = connection else { return completionHandler(.failure(error!)) }
 
@@ -172,7 +168,7 @@ struct ServerRequestHandler: RequestHandler
                     }
                 }
             }
-        }
+        }.eraseToAnyPublisher()
     }
 }
 

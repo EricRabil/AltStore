@@ -8,6 +8,7 @@
 
 import Foundation
 import Network
+import Combine
 
 public protocol RequestHandler
 {
@@ -21,7 +22,7 @@ public protocol RequestHandler
     
     func handleRemoveAppRequest(_ request: RemoveAppRequest, for connection: Connection, completionHandler: @escaping (Result<RemoveAppResponse, Error>) -> Void)
     
-    func handleEnableUnsignedCodeExecutionRequest(_ request: EnableUnsignedCodeExecutionRequest, for connection: Connection, completionHandler: @escaping (Result<EnableUnsignedCodeExecutionResponse, Error>) -> Void)
+    func handleEnableUnsignedCodeExecutionRequest(_ request: EnableUnsignedCodeExecutionRequest, for connection: Connection) -> AnyPublisher<EnableUnsignedCodeExecutionResponse, Error>
 }
 
 public protocol ConnectionHandler: AnyObject
@@ -155,10 +156,8 @@ private extension ConnectionManager
                 }
                 
             case .success(.enableUnsignedCodeExecution(let request)):
-                self.requestHandler.handleEnableUnsignedCodeExecutionRequest(request, for: connection) { (result) in
-                    finish(result)
-                }
-                
+                var cancellables = Set<AnyCancellable>()
+                self.requestHandler.handleEnableUnsignedCodeExecutionRequest(request, for: connection).sink(receiveResult: finish).store(in: &cancellables)
             case .success(.unknown):
                 finish(Result<ErrorResponse, Error>.failure(ALTServerError(.unknownRequest)))
             }

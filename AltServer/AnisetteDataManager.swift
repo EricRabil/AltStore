@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Combine
 
 private extension Bundle
 {
@@ -51,26 +52,16 @@ class AnisetteDataManager: NSObject
         DistributedNotificationCenter.default().addObserver(self, selector: #selector(AnisetteDataManager.handleAnisetteDataResponse(_:)), name: Notification.Name("com.rileytestut.AltServer.AnisetteDataResponse"), object: nil)
     }
     
-    func requestAnisetteData(_ completion: @escaping (Result<ALTAnisetteData, Error>) -> Void)
+    func requestAnisetteData() -> AnyPublisher<ALTAnisetteData, Error>
     {
-        self.requestAnisetteDataFromXPCService { (result) in
-            do
-            {
-                let anisetteData = try result.get()
-                completion(.success(anisetteData))
+        self.requestAnisetteDataFromXPCService().catch { error -> AnyPublisher<ALTAnisetteData, Error> in
+            switch error {
+            case CocoaError.xpcConnectionInterrupted:
+                return self.requestAnisetteDataFromPlugin().eraseToAnyPublisher()
+            default:
+                return Fail(error: error).eraseToAnyPublisher()
             }
-            catch CocoaError.xpcConnectionInterrupted
-            {
-                // SIP and/or AMFI are not disabled, so fall back to Mail plug-in.
-                self.requestAnisetteDataFromPlugin { (result) in
-                    completion(result)
-                }
-            }
-            catch
-            {
-                completion(.failure(error))
-            }
-        }
+        }.eraseToAnyPublisher()
     }
     
     func isXPCAvailable(completion: @escaping (Bool) -> Void)
@@ -87,32 +78,40 @@ class AnisetteDataManager: NSObject
 
 private extension AnisetteDataManager
 {
-    func requestAnisetteDataFromXPCService(completion: @escaping (Result<ALTAnisetteData, Error>) -> Void)
+    func requestAnisetteDataFromXPCService() -> Future<ALTAnisetteData, Error>
     {
-        guard let proxy = self.xpcConnection.remoteObjectProxyWithErrorHandler({ (error) in
-            print("Anisette XPC Error:", error)
-            completion(.failure(error))
-        }) as? AltXPCProtocol else { return }
-        
-        proxy.requestAnisetteData { (anisetteData, error) in
-            anisetteData?.sanitize(byReplacingBundleID: Bundle.ID.altXPC)
-            completion(Result(anisetteData, error))
+        Future<ALTAnisetteData, Error> { promise in
+            guard let proxy = self.xpcConnection.remoteObjectProxyWithErrorHandler({ (error) in
+                print("Anisette XPC Error:", error)
+                promise(.failure(error))
+            }) as? AltXPCProtocol else {
+                return
+            }
+            
+            proxy.requestAnisetteData { (anisetteData, error) in
+                anisetteData?.sanitize(byReplacingBundleID: Bundle.ID.altXPC)
+                promise(Result(anisetteData, error))
+            }
         }
     }
     
-    func requestAnisetteDataFromPlugin(completion: @escaping (Result<ALTAnisetteData, Error>) -> Void)
+    func requestAnisetteDataFromPlugin() -> Future<ALTAnisetteData, Error>
     {
-        let requestUUID = UUID().uuidString
-        self.anisetteDataCompletionHandlers[requestUUID] = completion
-        
-        let timer = Timer(timeInterval: 1.0, repeats: false) { (timer) in
-            self.finishRequest(forUUID: requestUUID, result: .failure(ALTServerError(.pluginNotFound)))
+        Future { promise in
+            let requestUUID = UUID().uuidString
+            self.anisetteDataCompletionHandlers[requestUUID] = {
+                promise($0)
+            }
+            
+            let timer = Timer(timeInterval: 1.0, repeats: false) { (timer) in
+                self.finishRequest(forUUID: requestUUID, result: .failure(ALTServerError(.pluginNotFound)))
+            }
+            self.anisetteDataTimers[requestUUID] = timer
+            
+            RunLoop.main.add(timer, forMode: .default)
+            
+            DistributedNotificationCenter.default().postNotificationName(Notification.Name("com.rileytestut.AltServer.FetchAnisetteData"), object: nil, userInfo: ["requestUUID": requestUUID], options: .deliverImmediately)
         }
-        self.anisetteDataTimers[requestUUID] = timer
-        
-        RunLoop.main.add(timer, forMode: .default)
-        
-        DistributedNotificationCenter.default().postNotificationName(Notification.Name("com.rileytestut.AltServer.FetchAnisetteData"), object: nil, userInfo: ["requestUUID": requestUUID], options: .deliverImmediately)
     }
     
     @objc func handleAnisetteDataResponse(_ notification: Notification)
